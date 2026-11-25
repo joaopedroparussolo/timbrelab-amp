@@ -1,0 +1,38 @@
+TIMBRELAB AMP - protótipo de plugin VST3 para o FL Studio
+==========================================================
+
+O QUE É
+Um amp de guitarra simulado (ganho, graves, médios, agudos, volume, gate,
+delay e reverb) com 4 presets. O preset "Travelers of Time" é uma
+APROXIMAÇÃO baseada em endorsements, não o setup confirmado da gravação.
+
+COMO OBTER O PLUGIN PRONTO PARA WINDOWS (sem instalar compilador)
+1. Crie uma conta grátis em github.com.
+2. Clique em "New repository", dê um nome (ex.: timbrelab-amp) e crie.
+3. Na página do repositório, clique em "uploading an existing file"
+   e arraste TODO o conteúdo desta pasta (CMakeLists.txt, Source e .github).
+   Se a pasta ".github" não subir arrastando, clique em
+   Add file > Create new file, digite o nome:
+       .github/workflows/build.yml
+   e cole o conteúdo do arquivo build.yml desta pasta.
+4. Clique em "Commit changes".
+5. Abra a aba "Actions". Uma compilação começa sozinha e leva uns
+   10 a 15 minutos. Quando ficar verde, clique nela e baixe o arquivo
+   "TimbreLab-Amp-Windows" na parte de baixo (Artifacts).
+6. Descompacte. Copie a pasta "TimbreLab Amp.vst3" para:
+       C:\Program Files\Common Files\VST3
+7. No FL Studio: Options > Manage plugins > Find installed plugins.
+   O plugin aparece em "Installed > Effects". Coloque-o em um canal do
+   Mixer, com a guitarra entrando por esse canal.
+
+ASIO E LATÊNCIA NO FL STUDIO
+Options > Audio settings > escolha o driver ASIO da sua interface e
+diminua o buffer (ex.: 128 ou 64 samples). Para guitarra ao vivo, ative
+também o monitoramento da entrada no canal do Mixer.
+
+TROCAR DE PRESET
+Use o menu de presets no topo da janela do plugin no FL Studio.
+
+SE A COMPILAÇÃO FALHAR
+Abra a compilação com erro na aba Actions, copie a mensagem de erro e
+envie ao Claude para corrigir.
